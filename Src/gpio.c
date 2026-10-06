@@ -14,6 +14,14 @@
 
 
 
+void gpio_config_default(GPIO_Config_t *config)
+{
+    config->pupd = GPIO_NO_PUPD;
+    config->type = GPIO_OUTPUT_PP;
+    config->speed = GPIO_SPEED_LOW;
+}
+
+
 /**
  * @brief Enables the clock for the specified GPIO peripheral.
  *
@@ -47,7 +55,7 @@ static void gpio_clock_enable(GPIO_RegDef_t *gpio)
 
     else if(gpio == GPIOH)
         RCC_AHB1ENR |= (1U << 7);
-    
+
 }
 
 
