@@ -46,6 +46,11 @@
 /* GPIO Limits */
 #define MAX_PIN 15U
 
+/*GPIO States */
+typedef enum{
+    GPIO_PIN_HIGH = 1U,
+    GPIO_PIN_LOW = 0
+}GPIO_State_t;
 
 typedef enum{
     GPIO_NO_PUPD = 0x00U,
