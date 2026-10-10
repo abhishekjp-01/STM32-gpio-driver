@@ -13,6 +13,26 @@
 
 #include <stdint.h>
 
+/* GPIO Alternate Function Select */
+typedef enum{
+    GPIO_AF0  = 0U,
+    GPIO_AF1  = 1U,
+    GPIO_AF2  = 2U,
+    GPIO_AF3  = 3U,
+    GPIO_AF4  = 4U,
+    GPIO_AF5  = 5U,
+    GPIO_AF6  = 6U,
+    GPIO_AF7  = 7U,
+    GPIO_AF8  = 8U,
+    GPIO_AF9  = 9U,
+    GPIO_AF10 = 10U,
+    GPIO_AF11 = 11U,
+    GPIO_AF12 = 12U,
+    GPIO_AF13 = 13U,
+    GPIO_AF14 = 14U,
+    GPIO_AF15 = 15U
+}GPIO_AF_t;
+
 /* GPIO Register Definition */
  typedef struct{
 
@@ -49,7 +69,7 @@
 /*GPIO States */
 typedef enum{
     GPIO_PIN_HIGH = 1U,
-    GPIO_PIN_LOW = 0
+    GPIO_PIN_LOW = 0U
 }GPIO_State_t;
 
 typedef enum{
@@ -88,6 +108,7 @@ typedef struct{
     GPIO_PPOD_t type;
     GPIO_Speed_t speed;
     GPIO_Mode_t mode;
+    GPIO_AF_t    af;
 
 }GPIO_Config_t;
 

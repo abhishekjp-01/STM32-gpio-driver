@@ -60,6 +60,34 @@ void gpio_init(GPIO_RegDef_t *gpio, GPIO_Config_t *config);
  */
 void gpio_write(GPIO_RegDef_t *gpio, uint8_t pin, GPIO_State_t state);
 
+/**
+ * @brief Reads the logic level of the specified GPIO pin.
+ *
+ * This function reads the Input Data Register (IDR) of the selected
+ * GPIO peripheral and returns the current logic level present on
+ * the specified pin.
+ *
+ * @param gpio Pointer to the GPIO peripheral to be read.
+ * @param pin  Pin number (0 to MAX_PIN).
+ *
+ * @return GPIO_PIN_HIGH if the pin is at logic high,
+ *         GPIO_PIN_LOW if the pin is at logic low or if the
+ *         arguments are invalid (NULL gpio or pin out of range).
+ */
+GPIO_State_t gpio_read(GPIO_RegDef_t *gpio, uint8_t pin);
+
+/**
+ * @brief Toggles the output level of the specified GPIO pin.
+ *
+ * This function inverts the current output state of the selected pin
+ * by modifying the Output Data Register (ODR).
+ *
+ * @param gpio Pointer to the GPIO peripheral to be controlled.
+ * @param pin  Pin number (0 to MAX_PIN).
+ *
+ * @return void
+ */
+void gpio_toggle(GPIO_RegDef_t *gpio, uint8_t pin);
 
 #endif /* GPIO_H */
 
